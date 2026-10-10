@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Balap Karung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+
+  <section id="menu" class="screen">
+    <h1>BALAP<br>KARUNG</h1>
+    <p class="sub">Lompat paling dulu sampai garis finis!</p>
+    <button class="btn red" id="btnAI">Main VS AI</button>
+    <button class="btn" id="btnVS">Main VS Player</button>
+  </section>
+
+  <section id="diff" class="screen" hidden>
+    <h2>Pilih tingkat AI</h2>
+    <button class="btn" data-lv="mudah">Mudah</button>
+    <button class="btn" data-lv="sedang">Sedang</button>
+    <button class="btn red" data-lv="sulit">Sulit</button>
+    <button class="btn" id="diffBack">Kembali</button>
+  </section>
+
+  <section id="vs" class="screen" hidden>
+    <h2>Main VS Player</h2>
+    <button class="btn red" id="btnCreate">BUAT ROOM</button>
+    <button class="btn" id="btnJoin">MASUK ROOM</button>
+    <button class="btn" id="vsBack">Kembali</button>
+  </section>
+
+  <section id="join" class="screen" hidden>
+    <h2>Masukkan kode room</h2>
+    <input id="codeIn" maxlength="4" autocomplete="off" autocapitalize="characters" placeholder="ABCD">
+    <button class="btn red" id="joinGo">Masuk</button>
+    <button class="btn" id="joinBack">Kembali</button>
+  </section>
+
+  <section id="lobby" class="screen" hidden>
+    <h2>Kode room</h2>
+    <div class="code" id="roomCode">----</div>
+    <p class="sub" id="count">1/4 pemain</p>
+    <ul id="plist"></ul>
+    <p class="sub" id="hint"></p>
+    <button class="btn red" id="btnStart">Mulai</button>
+    <button class="btn" id="btnLeave">Keluar</button>
+  </section>
+
+  <section id="game" class="screen" hidden>
+    <canvas id="cv" width="640" height="360"></canvas>
+    <div class="pads">
+      <button class="pad" id="padL" aria-label="Lompat kiri">∆</button>
+      <button class="pad" id="padR" aria-label="Lompat kanan">∆</button>
+    </div>
+  </section>
+
+</main>
+
+<div id="result" hidden>
+  <h2 id="resTitle">Hasil lomba</h2>
+  <ol id="rank"></ol>
+  <button class="btn red" id="again">Main lagi</button>
+  <button class="btn" id="toMenu">Menu utama</button>
+</div>
+<div id="toast" hidden></div>
+
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
